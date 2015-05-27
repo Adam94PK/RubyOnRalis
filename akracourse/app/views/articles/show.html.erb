@@ -13,3 +13,8 @@
 </p>
 
 <%= link_to 'Back', articles_path %>
+<p>
+<%= link_to 'Destroy', article_path(@article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>

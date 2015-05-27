@@ -2,8 +2,24 @@
 <p>
 <%= link_to "nowy artykul", new_article_path %>
 </p>
-<ul>
-<% @article.each do |article| %>
-    <li><%=link_to article.title, article_path(article) %></li>
-<% end %>
-    </ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @article.each do |article| %>
+        <tr>
+            <td>    <%=link_to article.title, article_path(article) %> </td>
+            <td> <%= link_to 'edit', edit_article_path(article) %> </td>
+            <td> <%= link_to 'Destroy', article_path(@article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %> </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
