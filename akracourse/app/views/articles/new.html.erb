@@ -6,8 +6,8 @@
         prohibited this article from being saved:
       </h2>
       <ul>
-        <%= @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <%= @article.errors.full_messages.each do |e| %>
+        <li><%= e %></li>
         <%end%>
       </ul>
     </div>
