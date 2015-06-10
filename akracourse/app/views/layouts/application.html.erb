@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      
+      <% if user_signed_in? %>
+        <code>
+          <%= current_user.email %>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+        </code>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path %>
+      <% end %>
+        
+
 <%= yield %>
 
 </body>
