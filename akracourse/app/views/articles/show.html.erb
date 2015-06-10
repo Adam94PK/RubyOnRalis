@@ -1,23 +1,4 @@
-<h1>
-    <%= @article.title %>
-</h1>
-
-<hr>
-
-<p>
-    <%= @article.text %>
-</p>
-
-<p>
-    <%= link_to 'Edytuj', edit_article_path(@article) %>
-</p>
-
-<%= link_to 'Back', articles_path %>
-<p>
-<%= link_to 'Destroy', article_path(@article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</p>
+<%= render 'article' %>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
